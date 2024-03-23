@@ -6,7 +6,7 @@ Student ID: 74526
 
 Requirements Checklist:
 
-1. Movie class created with structure from movie.json [x] [x]
+1. Movie class created with structure from movie.json [x] 
 2. Data filled for at least 4 movies, including relevant movie data obtained from impawards [x]
 3. Random number generated between 0 and 15 for seats_remaining for each movie [x]
 4. Initial default seats_selected value set to 0 for all movies [x]
@@ -23,3 +23,9 @@ Requirements Checklist:
 15. Git repository set to public and README.md includes link to Git repository []
 16. Video screencast link provided []
 17. Added release with app-debug.apk file in the repository []
+
+| Stage      | Time to complete  | Current Status | Finished                       |
+|------------|---------------|----------------|------------------------------------|
+| Development| 2 days    | Work in progress | <ul><li>- [x] completed</li><li>- [ ] todo</li></ul>
+| QA     |3 days |  Work in progress | <ul><li>[x] done</li><li>[ ] tobedone</li></ul>
+
