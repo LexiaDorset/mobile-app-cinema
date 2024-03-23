@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -75,7 +76,7 @@ fun BoxText(textString: String, textColor: Color, modifier: Modifier = Modifier)
 {
     Box(modifier = modifier, contentAlignment = Alignment.Center)
     {
-        Text(text = textString, color = textColor)
+        TextRoboto(text = textString, color = textColor)
     }
 }
 
@@ -118,15 +119,15 @@ fun InsideMovieCard(movie: Movie) // Inside of a movie card
 fun DetailsMovie(movie: Movie) // Details of a movie in home page
 {
     Column {
-        Text(movie._name, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-        Text(movie._description)
+        TextRoboto(text = movie._name, color = textColor, fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        TextRoboto(text = movie._description, color = textColor)
         if (movie._seats_selected > 0) {
-            Text("Seats selected: ${movie._seats_selected}", color = selectedSeatColor)
+            TextRoboto(text = "Seats selected: ${movie._seats_selected}", color = selectedSeatColor)
         } else {
             if (movie._seats_remaining < 3) {
                 RemainSeats(movie)
             } else {
-                Text("Seats remaining: ${movie._seats_remaining}")
+                TextRoboto(text = "Seats remaining: ${movie._seats_remaining}", color = textColor)
             }
         }
     }
@@ -138,7 +139,7 @@ fun RemainSeats(movie : Movie) // Seats remaining and Filling Fast
     Row(verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center)
     {
-        Text("Seats remaining: ${movie._seats_remaining}",
+        TextRoboto(text = "Seats remaining: ${movie._seats_remaining}", color = textColor,
             modifier = Modifier.padding(end = 5.dp))
         FillingFast()
     }

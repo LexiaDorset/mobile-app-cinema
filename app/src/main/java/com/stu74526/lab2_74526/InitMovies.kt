@@ -21,7 +21,7 @@ val starrings = listOf(
     arrayOf("Dylan O'Brien", "Kaya Scodelario", "Will Poulter"),
     arrayOf("Freddie Highmore", "Sarah Bolger", "David Strathairn"),
     arrayOf("Millie Bobby Brown", "Henry Cavill", "Sam Claflin"))
-
+val timing = listOf(140, 92, 113, 96, 129)
 fun randomNumber(): Int {
     return (1..15).random()
 }
@@ -34,7 +34,7 @@ fun createMovies()
     for (i in 0..4)
     {
         movies.add(Movie(titles[i], images[i], certifications[i],
-            descriptions[i], starrings[i], 45, randomNumber(), 0))
+            descriptions[i], starrings[i], timing[i], randomNumber(), 0))
     }
 }
 

@@ -15,11 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Badge
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -125,17 +123,15 @@ fun BodyMovie(movie: Movie) {
 
 @Composable
 fun MainDetailMovie(movie: Movie) {
-    Row()
+    Row(verticalAlignment = Alignment.CenterVertically)
     {
-        Text(
-            text = movie._name.toUpperCase(),
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            color = textColor
+        TextRoboto(
+            text = movie._name.toUpperCase(), color = textColor,
+            fontWeight = FontWeight.Bold, fontSize = 24.sp
         )
         ShowImage(
             draw = movie._certification, modifier = Modifier
-                .size(30.dp)
+                .size(35.dp)
                 .padding(start = 10.dp)
                 .align(Alignment.CenterVertically)
         )
@@ -144,56 +140,53 @@ fun MainDetailMovie(movie: Movie) {
 
 @Composable
 fun SecondDetailMovie(movie: Movie) {
-    Column(modifier = Modifier.padding(top = 10.dp, bottom = 8.dp)) {
+    Column(
+        modifier = Modifier.padding(top = 10.dp, bottom = 8.dp),
+        verticalArrangement = Arrangement.Center
+    )
+    {
         RowText(
             textString = "Starring ",
             stextString = movie._starring.joinToString(),
         )
         RowText(
             textString = "Running Time ",
-            stextString = "${movie._running_time_mins} mins",
+            stextString = "${movie._running_time_mins / 60} hr(s) ${movie._running_time_mins % 60} mins",
         )
     }
 }
 
 @Composable
-fun RowText(textString : String,
-            stextString : String)
-{
-    Row()
+fun RowText(
+    textString: String,
+    stextString: String
+) {
+    Row(verticalAlignment = Alignment.CenterVertically)
     {
-        Text(
-            text = textString,
-            fontSize = 16.sp,
-            color = textColor
-        )
-        Text(
-            text = stextString,
-            fontSize = 14.sp,
-            color = contractTextColor
-        )
+        TextRoboto(text = textString, color = textColor, fontSize = 16.sp)
+        TextRoboto(text = stextString, color = contractTextColor, fontSize = 14.sp)
     }
 }
 
 @Composable
 fun SeatsMovieDetails(movie: Movie) {
     if (movie._seats_selected > 0) {
-        TextSeats("${movie._seats_selected} seat(s) selected ",
-            selectedSeatColor, R.drawable.bluecouch)
+        TextSeats(
+            "${movie._seats_selected} seat(s) selected ",
+            selectedSeatColor, R.drawable.bluecouch
+        )
     } else {
-        Text(
-            text = movie._description,
-            fontSize = 16.sp,
-            color = textColor,
+        TextRoboto(
+            text = movie._description, color = textColor, fontSize = 16.sp,
             modifier = Modifier.padding(top = 10.dp, bottom = 15.dp)
         )
+
         SeatsRow()
     }
 }
 
 @Composable
-fun TextSeats(textString : String, textColor : Color, draw : Int)
-{
+fun TextSeats(textString: String, textColor: Color, draw: Int) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -207,10 +200,8 @@ fun TextSeats(textString : String, textColor : Color, draw : Int)
             contentDescription = null,
             modifier = Modifier.size(30.dp)
         )
-        Text(
-            text = textString,
-            fontSize = 18.sp,
-            color = textColor,
+        TextRoboto(
+            text = textString, color = textColor, fontSize = 18.sp,
             modifier = Modifier.padding(start = 7.dp)
         )
     }
@@ -238,11 +229,7 @@ fun SeatsRow() {
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text(
-            text = "Select Seats",
-            fontSize = 18.sp,
-            color = textColor
-        )
+        TextRoboto(text = "Select Seats", color = textColor, fontSize = 18.sp)
         if (selectedSeats.value > 0) {
             ButtonSeats(
                 {
@@ -254,10 +241,7 @@ fun SeatsRow() {
         } else {
             ButtonSeats({}, R.drawable.minusunselected, false)
         }
-        Text(
-            text = "${selectedSeat}",
-            fontSize = 18.sp, color = textColor
-        )
+        TextRoboto(text = "${selectedSeat}", color = textColor, fontSize = 18.sp)
         if (remainingSeat > 0) {
             ButtonSeats({
                 selectSeat()
@@ -268,20 +252,20 @@ fun SeatsRow() {
         }
     }
     TextSeats("${remainingSeat} Seats Remaining", textColor, R.drawable.couch)
-    if(remainingSeat < 3)
-    {
+    if (remainingSeat < 3) {
         BadgeFillingFast()
     }
 }
 
 @Composable
-fun BadgeFillingFast()
-{
+fun BadgeFillingFast() {
     Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth())
     {
-        BoxText("Filling Fast", Color.Red,modifier = Modifier
-            .background(Color.DarkGray, RoundedCornerShape(5.dp))
-            .padding(top = 3.dp, bottom = 3.dp, start = 5.dp, end = 5.dp))
+        BoxText(
+            "Filling Fast", Color.Red, modifier = Modifier
+                .background(Color.DarkGray, RoundedCornerShape(5.dp))
+                .padding(top = 3.dp, bottom = 3.dp, start = 5.dp, end = 5.dp)
+        )
     }
 }
 
