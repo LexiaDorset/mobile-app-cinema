@@ -3,6 +3,7 @@ package com.stu74526.lab2_74526
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -52,6 +53,21 @@ fun MovieScreen(navController: NavController, movieId: String?) {
     )
     {
         MainMovie(movie, navController)
+        Credits()
+    }
+}
+
+@Composable
+fun Credits()
+{
+    Column()
+    {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(contrastColor)
+        )
         BoxText(
             "Images credit: http://www.impawards.com/",
             textColor, Modifier
@@ -201,7 +217,7 @@ fun TextSeats(textString: String, textColor: Color, draw: Int) {
             modifier = Modifier.size(30.dp)
         )
         TextRoboto(
-            text = textString, color = textColor, fontSize = 18.sp,
+            text = textString, color = textColor, fontSize = 20.sp,
             modifier = Modifier.padding(start = 7.dp)
         )
     }
@@ -229,7 +245,7 @@ fun SeatsRow() {
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        TextRoboto(text = "Select Seats", color = textColor, fontSize = 18.sp)
+        TextRoboto(text = "Select Seats", color = textColor, fontSize = 20.sp)
         if (selectedSeats.value > 0) {
             ButtonSeats(
                 {
@@ -241,7 +257,7 @@ fun SeatsRow() {
         } else {
             ButtonSeats({}, R.drawable.minusunselected, false)
         }
-        TextRoboto(text = "${selectedSeat}", color = textColor, fontSize = 18.sp)
+        TextRoboto(text = "${selectedSeat}", color = textColor, fontSize = 20.sp)
         if (remainingSeat > 0) {
             ButtonSeats({
                 selectSeat()
