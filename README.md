@@ -6,7 +6,7 @@ Student ID: 74526
 
 Requirements Checklist:
 
-1. Movie class created with structure from movie.json [x]
+1. Movie class created with structure from movie.json [x] [x]
 2. Data filled for at least 4 movies, including relevant movie data obtained from impawards [x]
 3. Random number generated between 0 and 15 for seats_remaining for each movie [x]
 4. Initial default seats_selected value set to 0 for all movies [x]
