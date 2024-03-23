@@ -179,7 +179,7 @@ fun RowText(
 ) {
     Row(verticalAlignment = Alignment.CenterVertically)
     {
-        TextRoboto(text = textString, color = textColor, fontSize = 16.sp)
+        TextRoboto(text = textString, color = textColor, fontSize = 16.sp, fontWeight = FontWeight.Bold)
         TextRoboto(text = stextString, color = contractTextColor, fontSize = 14.sp)
     }
 }
