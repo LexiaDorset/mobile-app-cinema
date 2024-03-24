@@ -53,7 +53,7 @@ fun Body(navController: NavController) // Body with credit of Home page
     Column(modifier = Modifier.fillMaxSize()) {
         MovieList(navController)
         BoxText(
-            "Images credit: http://www.impawards.com/",
+            "Credits: http://www.impawards.com/ & https://www.imdb.com/",
             textColor, Modifier
                 .fillMaxWidth()
                 .background(

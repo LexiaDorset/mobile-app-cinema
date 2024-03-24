@@ -69,7 +69,7 @@ fun Credits()
                 .background(contrastColor)
         )
         BoxText(
-            "Images credit: http://www.impawards.com/",
+            "Credits: http://www.impawards.com/ & https://www.imdb.com/",
             textColor, Modifier
                 .fillMaxWidth()
                 .background(backgroundColor)
