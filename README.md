@@ -8,7 +8,7 @@ Requirements Checklist:
 
 <ul> 
   <li>- [x] Movie class created with structure from movie.json</li>
-  <li>- [x] Data filled for at least 4 movies, including relevant movie data obtained from impawards</li>
+  <li>- [x] Data filled for at least 4 movies, including relevant movie data obtained from <a href="https://www.imdb.com/">imbd</a></li>
   <li>- [x] Random number generated between 0 and 15 for seats_remaining for each movie</li>
   <li>- [x] Initial default seats_selected value set to 0 for all movies</li>
   <li>- [x] Show number of selected seats and hide remaining seats when seats are selected</li>
@@ -21,7 +21,7 @@ Requirements Checklist:
   <li>- [x] Used "Roboto Condensed" font to replicate same style</li>
   <li>- [x] Used original movie images from <a href="http://www.impawards.com/">impawards</a></li>
   <li>- [x] README.md file included with name and student ID</li>
-  <li>- [x] Git repository set to public and README.md includes link to Git repository</li>
+  <li>- [x] Git repository set to public and README.md with Name, Student ID and requirements checklist (with ticks)</li>
   <li>- [ ] Video screencast link provided</li>
   <li>- [ ] Added release with app-debug.apk file in the repository</li>
 </ul>
