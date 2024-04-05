@@ -22,7 +22,7 @@ Requirements Checklist:
   <li>- [x] Used original movie images from <a href="http://www.impawards.com/">impawards</a></li>
   <li>- [x] README.md file included with name and student ID</li>
   <li>- [x] Git repository set to public and README.md with Name, Student ID and requirements checklist (with ticks)</li>
-  <li>- [ ] Video screencast link provided</li>
+  <li>- [x] Video screencast link provided</li>
   <li>- [x] Added release with app-debug.apk file (located in the root) in the repository</li>
 </ul>
 
