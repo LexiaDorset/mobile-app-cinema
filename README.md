@@ -10,6 +10,9 @@
 
 You can download the app in the release section.
 
+## Result
+You can see the ![report](report_lab2_74526.pdf).
+
 ## Requirements Checklist:
 
 <ul> 
